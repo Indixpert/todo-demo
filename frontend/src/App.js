@@ -61,10 +61,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-violet-200 to-pink-200 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl">
-        <div className="bg-white shadow-xl rounded-lg p-6 md:p-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">Todo App</h1>
+        <div className="bg-white/80 backdrop-blur-sm shadow-2xl rounded-lg p-6 md:p-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">Todo App</h1>
           <TodoForm addTodo={addTodo} />
           <TodoList
             todos={todos}

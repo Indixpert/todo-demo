@@ -61,15 +61,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Todo application</h1>
-      <TodoForm addTodo={addTodo} />
-      <TodoList
-        todos={todos}
-        toggleComplete={toggleComplete}
-        deleteTodo={deleteTodo}
-        updateTodo={updateTodo}
-      />
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-2xl">
+        <div className="bg-white shadow-xl rounded-lg p-6 md:p-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">Todo App</h1>
+          <TodoForm addTodo={addTodo} />
+          <TodoList
+            todos={todos}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+            updateTodo={updateTodo}
+          />
+        </div>
+      </div>
     </div>
   );
 }

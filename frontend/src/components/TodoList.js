@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, toggleComplete, deleteTodo, updateTodo }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
       {todos.length > 0 ? (
         todos.map((todo) => (
           <TodoItem
@@ -15,7 +15,7 @@ const TodoList = ({ todos, toggleComplete, deleteTodo, updateTodo }) => {
           />
         ))
       ) : (
-        <p className="p-4 text-center text-gray-500">No todos yet. Add one above!</p>
+        <p className="p-4 text-center text-gray-500">Your todo list is empty.</p>
       )}
     </div>
   );

@@ -29,12 +29,21 @@ function App() {
     }
   };
 
+  const updateTodo = async (id, text) => {
+    try {
+      const res = await axios.put(`/api/todos/${id}`, { text });
+      setTodos(todos.map((todo) => (todo._id === id ? res.data : todo)));
+    } catch (err) {
+      console.error('Error updating todo:', err);
+    }
+  };
+
   const toggleComplete = async (id) => {
     try {
-      await axios.put(`/api/todos/${id}`);
+      const res = await axios.put(`/api/todos/${id}`);
       setTodos(
         todos.map((todo) =>
-          todo._id === id ? { ...todo, completed: !todo.completed } : todo
+          todo._id === id ? res.data : todo
         )
       );
     } catch (err) {
@@ -59,6 +68,7 @@ function App() {
         todos={todos}
         toggleComplete={toggleComplete}
         deleteTodo={deleteTodo}
+        updateTodo={updateTodo}
       />
     </div>
   );
